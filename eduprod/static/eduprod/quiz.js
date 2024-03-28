@@ -25,3 +25,4 @@ if (currentQuestionIndex < questions.length) {
     }
 }
 });
+ 
