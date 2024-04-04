@@ -9,17 +9,13 @@ document.addEventListener("DOMContentLoaded", function() {
         if (currentQuestionIndex < questions.length) {
             const question = questions[currentQuestionIndex].fields.question_text;
             const answer = questions[currentQuestionIndex].fields.answer_text;
-            // Display question on the front side
-            content.querySelector('.front').innerHTML = `<div class='question'>Question: ${question}</div><button id="revealBtn">Reveal Answer</button>`;
-            // Display answer on the back side
-            content.querySelector('.back').innerHTML = `<div class='answer' style='display: none;'>Answer: ${answer}</div>`;
+            content.innerHTML = `<div class='question'>Question: ${question}</div><div class='answer' style='display: none;'>Answer: ${answer}</div>`;
             btn.textContent = "Reveal Answer";
         } else {
             content.innerHTML = "No more questions.";
             btn.style.display = "none";
         }
     }
-    
 
 
     displayQuestion();

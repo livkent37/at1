@@ -11,3 +11,4 @@ def index(request):
     questions_json = serializers.serialize('json', questions)
     # Pass the JSON string to the template context
     return render(request, 'eduprod/flashcard.html', {'questions_json': questions_json})
+
