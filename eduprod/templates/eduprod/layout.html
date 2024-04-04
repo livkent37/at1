@@ -2,30 +2,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Set title and link styles.css and quiz.js -->
     <title>Q&A</title>
     <link href="{% static 'users/styles.css' %}" rel="stylesheet">
     <script src="{% static 'eduprod/quiz.js' %}" defer></script>
 </head>
 <body>
+    <!-- Header section -->
     <div class="header">
+        <!-- Logo -->
         <div class="logo">
+            <!-- Display logo -->
             <img src="{% static 'users/logo.gif' %}" alt="Logo">
         </div>
+        <!-- User information -->
         <div class="user-info">
+            <!-- Display username -->
             <span>{{ user.username }}</span>
+            <!-- Logout form -->
             <form action="{% url 'users:logout' %}" method="post" style="margin: 0; margin-left: 20px;">
                 {% csrf_token %}
+                <!-- Logout button -->
                 <button type="submit">Log out</button>
             </form>
         </div>
     </div>   
+    <!-- Display messages if any -->
     {% if messages %}
         <ul class="messages">
         {% for message in messages %}
+            <!-- Display each message -->
             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
         {% endfor %}
         </ul>
     {% endif %}    
+    <!-- Block for body content -->
     {% block body %}
     {% endblock %}
 </body>

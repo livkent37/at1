@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flashcard</title>
 <style>
+    /* CSS styling for flashcard */
     .flashcard {
         width: 300px;
         height: 200px;
@@ -46,12 +48,17 @@
 </head>
 <body>
 
+<!-- Flashcard container with front and back sides -->
 <div class="flashcard" onclick="flipCard()">
     <div class="card">
+        <!-- Front side of the flashcard -->
         <div class="front">
+            <!-- Displaying content dynamically using data-questions attribute -->
             <div id="content" data-questions="{{ questions_json }}"></div>
         </div>
+        <!-- Back side of the flashcard -->
         <div class="back">
+            <!-- Displaying content dynamically using data-questions attribute -->
             <div id="content" data-questions="{{ questions_json }}"></div>
         </div>
     </div>
@@ -59,38 +66,47 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+    // Initialize variables and get questions data
     let currentQuestionIndex = 0;
     const questions = JSON.parse(document.getElementById('content').getAttribute('data-questions'));
     const content = document.getElementById('content');
     const btn = document.getElementById('revealBtn');
 
+    // Function to display question and answer
     function displayQuestion() {
         if (currentQuestionIndex < questions.length) {
+            // Get question and answer from questions array
             const question = questions[currentQuestionIndex].fields.question_text;
             const answer = questions[currentQuestionIndex].fields.answer_text;
+            // Display question and hide answer initially
             content.innerHTML = `<div class='question'>Question: ${question}</div><div class='answer' style='display: none;'>Answer: ${answer}</div>`;
             btn.textContent = "Reveal Answer";
         } else {
+            // Display message when no more questions left
             content.innerHTML = "No more questions.";
             btn.style.display = "none";
         }
     }
 
-     
+    // Display first question initially
     displayQuestion();
 
+    // Event listener for reveal button click
     btn.addEventListener("click", function() {
         const answerElement = content.querySelector('.answer');
         if (btn.textContent === "Reveal Answer") {
+            // Display answer on reveal button click
             answerElement.style.display = "block";
             btn.textContent = "Next Question";
         } else {
+            // Move to next question on next button click
             currentQuestionIndex++;
             displayQuestion();
         }
     });
 });
 
+    // Function to flip the flashcard
     function flipCard() {
         var card = document.querySelector('.card');
         card.style.transform = card.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
@@ -99,3 +115,4 @@
 
 </body>
 </html>
+```
