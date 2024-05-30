@@ -1,9 +1,58 @@
-<mxfile host="app.diagrams.net" modified="2024-05-30T04:03:59.701Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" version="24.4.10" etag="RUEHCoA4MM-VRGy6VgCi" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-30T04:31:43.578Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="rd6hdYCNDUeWZJtjdd3a" version="24.4.10" type="github">
   <diagram name="Page-1" id="9ZDilAWATAqvLQuRUpa0">
-    <mxGraphModel>
+    <mxGraphModel dx="1680" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="UIi_nowCwIkQgQ-Gco02-1" value="Loans" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="440" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="UIi_nowCwIkQgQ-Gco02-2" value="+Records of book loans&lt;div&gt;+Loan Date (PK)&lt;/div&gt;&lt;div&gt;+return date&lt;/div&gt;&lt;div&gt;+Barcode (FK)(PK)&lt;/div&gt;&lt;div&gt;+Member ID (FK)(PK)&lt;/div&gt;&lt;div&gt;+Staff ID (FK)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="UIi_nowCwIkQgQ-Gco02-1">
+          <mxGeometry y="50" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="UIi_nowCwIkQgQ-Gco02-3" value="Books" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="250" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="UIi_nowCwIkQgQ-Gco02-4" value="+Barcode(PK)&lt;br&gt;+Title&lt;br&gt;+Author&lt;div&gt;+Publication year&lt;/div&gt;&lt;div&gt;+ISBN&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="UIi_nowCwIkQgQ-Gco02-3">
+          <mxGeometry y="50" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="UIi_nowCwIkQgQ-Gco02-5" value="Librarians" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="260" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="UIi_nowCwIkQgQ-Gco02-6" value="+Staff ID (PK)&lt;div&gt;+ Name&lt;/div&gt;&lt;div&gt;+Contact details&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="UIi_nowCwIkQgQ-Gco02-5">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="UIi_nowCwIkQgQ-Gco02-7" value="Members" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-60" y="450" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="UIi_nowCwIkQgQ-Gco02-8" value="+Member ID (PK)&lt;div&gt;+Name&lt;/div&gt;&lt;div&gt;+Address&lt;/div&gt;&lt;div&gt;+ Phone number&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="UIi_nowCwIkQgQ-Gco02-7">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="UIi_nowCwIkQgQ-Gco02-13" value="" style="endArrow=ERoneToMany;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endFill=0;" edge="1" parent="1" source="UIi_nowCwIkQgQ-Gco02-8" target="UIi_nowCwIkQgQ-Gco02-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="450" as="sourcePoint" />
+            <mxPoint x="150" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UIi_nowCwIkQgQ-Gco02-14" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1.005;exitY=0.572;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="UIi_nowCwIkQgQ-Gco02-4" target="UIi_nowCwIkQgQ-Gco02-2">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="160" y="500" as="sourcePoint" />
+            <mxPoint x="260" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UIi_nowCwIkQgQ-Gco02-15" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1.022;exitY=0.357;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.038;entryY=0.397;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="UIi_nowCwIkQgQ-Gco02-6" target="UIi_nowCwIkQgQ-Gco02-2">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="456.96" y="345" as="sourcePoint" />
+            <mxPoint x="580" y="550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="276.96" y="360" />
+              <mxPoint x="449.2" y="380" />
+              <mxPoint x="259.2" y="420" />
+              <mxPoint x="249.20000000000002" y="427" />
+              <mxPoint x="306.96" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
